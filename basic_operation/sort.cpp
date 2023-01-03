@@ -11,9 +11,9 @@ struct Student
     float grd;
 };
 
-/* order functions used to customize data type in sort()*/
+/* sort functions used to customize data type in sort()*/
 bool operator<(const Student &s1, const Student &s2);
-bool name_order(const Student &s1, const Student &s2);
+bool name_sort(const Student &s1, const Student &s2);
 
 int main(int argc, char const *argv[])
 {
@@ -36,7 +36,7 @@ int main(int argc, char const *argv[])
     {
         v.push_back(s[i]);
     }
-    // order by grd using operator< function1
+    // sort by grd using operator< function1
     sort(v.begin(), v.end());
     cout << "Order by grd:" << endl;
     
@@ -45,8 +45,8 @@ int main(int argc, char const *argv[])
         cout << v[i].code << " " << v[i].name << " " << v[i].grd << "\n";
     }
 
-    // order by name using name_order function
-    sort(v.begin(), v.end(), name_order);
+    // sort by name using name_order function
+    sort(v.begin(), v.end(), name_sort);
     cout << "Order by name:" << endl;
 
     for (int i = 0; i < 3; i++)
@@ -68,7 +68,7 @@ bool operator<(const Student &s1, const Student &s2)
         return false;
 }
 
-bool name_order(const Student &s1, const Student &s2)
+bool name_sort(const Student &s1, const Student &s2)
 {
     if (s1.name < s2.name)
     {
