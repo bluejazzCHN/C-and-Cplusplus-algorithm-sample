@@ -38,6 +38,10 @@ void backtrack(vector<int> nums, vector<int> track)
 int main(int argc, char const *argv[])
 {
     vector<int> a = {6, 2, 3, 1, 0};
+    
+    //对a按照由小到大排序
+    // sort(a.begin(),a.end());
+    //对a按照由大到小排序
     sort(a.begin(), a.end(), greater());
 
     // 回溯，得出a的全排列结果保存在res中。
