@@ -16,9 +16,13 @@ bool isValidQ(vector<string> board, int row, int col);
 
 vector<vector<string>> solveNQueens(int n)
 {
+    //使用'.'初始化棋盘,可以放置Queen就使用'Q'
     string row(n, '.');
     vector<string> board(n, row);
+
+    //回溯
     backtrack(board, 0);
+    //返回所有的放置方法
     return res;
 }
 
@@ -33,7 +37,8 @@ void backtrack(vector<string> &board, int row)
 
     int n = board[row].size();
 
-    for (int col = 0; col < n; col++)
+    //按照列循环
+    for (int col = 0; col < n; col++)        
     {
         // 确认这个点是否可以放Q
         if (!isValidQ(board, row, col))
@@ -41,7 +46,10 @@ void backtrack(vector<string> &board, int row)
             continue;
         }
         board[row][col] = 'Q';
+
+        //按照行递归，每行与上一行可能有多个组合
         backtrack(board, row + 1);
+        
         board[row][col] = '.';
     }
 }
@@ -79,9 +87,10 @@ bool isValidQ(vector<string> board, int row, int col)
 
 int main(int argc, char const *argv[])
 {
-    int row = 5;
+    int row = 4; //必须>=4;4
 
     solveNQueens(row);
+
     cout << "Result of Queen board:" << endl;
     for (int i = 0;i<res.size();i++)
     {
@@ -96,6 +105,5 @@ int main(int argc, char const *argv[])
         }
         cout<<endl;
     }
-
     return 0;
 }
