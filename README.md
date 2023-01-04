@@ -1,1 +1,1 @@
-# c&c++ algorithm demo
+# c&c++ algorithm sample
