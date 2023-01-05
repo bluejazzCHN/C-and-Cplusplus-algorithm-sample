@@ -10,6 +10,7 @@ vector<int> track;       // 一条回溯路径回溯路径
 // 路径：记录在track对象中
 // 路径元素选择列表：nums中不在track中的
 // 结束条件：nums的元素全部在track中存在
+// 思路：开始做出结束判断，在递归之前做出选择，在递归之后做出还原
 void backtrack(vector<int> nums, vector<int> track)
 {
     // 出发结束条件，结束条件：判断track是否已经完成遍历
@@ -22,7 +23,8 @@ void backtrack(vector<int> nums, vector<int> track)
     for (int n : nums)
     {
         // 判断n是否已经在track中
-        if (count(track.begin(), track.end(), n))
+        // if (count(track.begin(), track.end(), n))
+        if(find(track.begin(),track.end(),n) != track.end())//比count高效
         {
             continue;
         }
