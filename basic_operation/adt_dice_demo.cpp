@@ -6,10 +6,10 @@ using namespace std;
 class Dice
 {
 private:
+    string name;
     int total = 0;
     int diceNumbers;
     vector<int> tosses;
-    string name;
 
 public:
     Dice(int num, string n)
@@ -63,11 +63,11 @@ public:
 
 int main(int argc, char const *argv[])
 {
-    srand(time(NULL));
-    Dice *robin = new Dice(4, "robin");
+    srand(time(NULL)); // 设置随机数种子，避免每次随机数相同
+    Dice *robin = new Dice(2, "robin");
     robin->toss();
     robin->displayToss();
-    Dice *father = new Dice(4, "father");
+    Dice *father = new Dice(2, "father");
     father->toss();
     father->displayToss();
     cout << endl;
