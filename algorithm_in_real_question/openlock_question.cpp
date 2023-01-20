@@ -106,6 +106,6 @@ int main(int argc, char const *argv[])
     // cout << minusOne("4000", 3) << endl;
 
     vector<string> deadlocks = {"3000"};
-    cout << openLock(deadlocks, "0031") << endl;
+    cout << openLock(deadlocks, "0631") << endl;
     return 0;
 }

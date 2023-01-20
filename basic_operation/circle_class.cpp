@@ -14,15 +14,15 @@ private:
 
 public:
     Circle(float r) : radius(r){};
-    double area()
+    double area() const
     {
         return M_PI * radius * radius;
     }
-    double perimeter()
+    double perimeter() const
     {
         return M_PI * radius * 2;
     }
-    void setRadius(double r)
+    void setRadius(double r) 
     {
         radius = r;
     }
